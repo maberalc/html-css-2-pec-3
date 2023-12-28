@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
+    <title>Club de Tenis Calicanto</title>
+  </head>
+  <body class="flex flex-col h-[100vh] m-0 font-sans text-base leading-6">
+    <include src="./views/header.html"></include>
+    <section class="p-20 flex flex-col justify-center items-center gap-8 w-[90%] my-0 mx-auto">
+      <h1 class="text-center mb-8 text-4xl">Participantes destacados de la liga</h1>
+      <div class="flex flex-row justify-center items-center gap-4">
+        <div class="border rounded-md overflow-hidden w-[30%] h-full">
+          <img class="w-full h-64 object-cover" src="/src/assets/images/nadal.jpeg" alt="Rafa Nadal" width="100%">
+          <div class="p-4">
+            <h5 class="font-semibold mb-2">Rafa Nadal</h5>
+            <p>Considerado mejor tenista de la historia en tierra batida y de los mejores de la historia</p>
+          </div>
+        </div>
+        <div class="border rounded-md overflow-hidden w-[30%] h-full">
+          <img class="w-full h-64 object-cover" src="/src/assets/images/djokovic.jpeg" alt="Novak Djokovic" width="100%">
+          <div class="p-4">
+            <h5 class="font-semibold mb-2">Novak Djokovic</h5>
+            <p>Tenista nº1 del ranking ATP</p>
+          </div>
+        </div>
+        <div class="border rounded-md overflow-hidden w-[30%] h-full">
+          <img class="w-full h-64 object-cover" src="/src/assets/images/ferrer.jpeg" alt="David Ferrer" width="100%">
+          <div class="p-4">
+            <h5 class="font-semibold mb-2">David Ferrer</h5>
+            <p>Extenista profesional que llegó a ser el nº3 del ranking ATP</p>
+          </div>
+        </div>
+      </div>
+      <div class="featured-row">
+        <div class="border rounded-md overflow-hidden w-[30%] h-full">
+          <img class="w-full h-64 object-cover" src="/src/assets/images/serena.jpeg" alt="Serena Williams" width="100%">
+          <div class="p-4">
+            <h5 class="font-semibold mb-2">Serena Williams</h5>
+            <p>Extenista que fue nº1 del ranking WTA por 319 semanas</p>
+          </div>
+        </div>
+        <div class="border rounded-md overflow-hidden w-[30%] h-full">
+          <img class="w-full h-64 object-cover" src="/src/assets/images/venus.jpeg" alt="Venus Williams" width="100%">
+          <div class="p-4">
+            <h5 class="font-semibold mb-2">Venus Williams</h5>
+            <p>Tenista ganadora de 7 Grand Slams</p>
+          </div>
+        </div>
+        <div class="border rounded-md overflow-hidden w-[30%] h-full">
+          <img class="w-full h-64 object-cover" src="/src/assets/images/ferrero.jpeg" alt="Juan Carlos Ferrero" width="100%">
+          <div class="p-4">
+            <h5 class="font-semibold mb-2">Juan Carlos Ferrero</h5>
+            <p>Extenista ganador de Roland Garros y que alcanzó el nº1 del ranking ATP por 8 semanas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>
