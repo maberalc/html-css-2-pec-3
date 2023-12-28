@@ -7,6 +7,8 @@
  * Import variables
  */
 
+@tailwind base;
+@tailwind components;
 @import "variables";
 
 /**
@@ -15,8 +17,9 @@
  * see commented examples below
  */
 
-// @import "some-node-module";
-// @import "@some-company/some-node-module";
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
+// @import "npm:bootstrap/dist/css/bootstrap.css";
+// importar bootstrap desde scss para personalizarlo
 
 /**
  * Import layouts
@@ -24,6 +27,11 @@
  */
 
 @import "layouts/home";
+@import "layouts/featured";
+@import "layouts/bio";
+@import "layouts/contact";
+
+@tailwind utilities;
 
 /**
  * Do NOT include anything else in this file!

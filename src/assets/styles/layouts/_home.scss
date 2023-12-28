@@ -2,56 +2,220 @@
   box-sizing: border-box;
 }
 
-body {
+@layer components {
+  .link {
+    @apply text-link no-underline hover:text-linkHover hover:underline transition-colors duration-150 ease-in-out;
+  }
+}
+
+.main__grid {
+  overflow: hidden;
+  height: 66vh;
+  @supports (display: grid) {
+    display: grid;
+    grid-template-rows: 1fr 4fr 2fr 1fr 1fr;
+    grid-template-columns: 4fr 3fr 4fr;
+  
+    .header {
+      grid-column: 1 / 4;
+      grid-row: 1 / 1;
+      z-index: 100;
+    }
+  }
+
+  @supports not (display: grid) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  @media only screen and (max-width: 900px) {
+    height: 40vh;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 60vh;
+  }
+}
+
+.main__grid--img {
+  @supports (display: grid) {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+  }
+  @supports not (display: grid) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+
+.main__grid--title {
+  @supports (display: grid) {
+    grid-column: 2 / 2;
+    grid-row: 3 / 3;
+  }
+  
+  @supports not (display: grid) {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 400px;
+    height: 115px;
+  }
+
+  padding: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: $title-color;
+  background: $background-contrast;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 1.5rem;
+  }
+  @media only screen and (max-width: 650px) {
+    font-size: 1rem;
+  }
+}
+
+.main__grid--text {
+  @supports (display: grid) {
+    grid-column: 2 / 2;
+    grid-row: 4 / 4;
+  }
+
+  @supports not (display: grid) {
+    position: absolute;
+    top: 68%;
+    left: 30%;
+    width: 400px;
+    height: 80px;
+  }
+
+  text-align: center;
+  font-weight: 400;
+  color: $title-color;
+  background: $background-contrast;
+  height: 100%;
+  padding: 0 10px;
+  border-radius: 0 0 10px 10px;
+  @media only screen and (max-width: 900px) {
+    font-size: 0.8rem;
+  }
+}
+
+/* body {
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0;
-  padding: 2rem;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
-}
+} */
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
+/* .footer {
+  width: 90%;
+  margin: 1.5rem auto 0 auto;
+  font-size: 1rem;
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $link-color;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
+ */
+/* .header {
+  width: 90%;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $link-color;
+  position: relative;
+  z-index: 1;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+} */
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
+/* @layer list, listsocial;
 
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
+@layer list {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+@layer listsocial {
+  ul:is(.social) {
+    flex-direction: row;
+  }
+} */
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+/* a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    color: $link-color-hover;
+  }
+} */
+
+/* .contact__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+
+  p {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 500px) {
+    h2 {
+      font-size: 1rem;
+      margin: 0;
+    }
+    p {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+    li {
+      font-size: 0.8rem;
+      margin: 0;
+    }
   }
 }
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
-}
+.footer__container {
+  margin: auto 0 0 0;
+} */
