@@ -6,6 +6,10 @@
   .link {
     @apply text-link no-underline hover:text-linkHover hover:underline transition-colors duration-150 ease-in-out;
   }
+
+  .body {
+    @apply flex flex-col h-[100vh] m-0 font-sans text-base leading-6;
+  }
 }
 
 .main__grid {
